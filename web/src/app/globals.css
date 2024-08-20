@@ -66,7 +66,7 @@
   }
 
   body {
-    @apply text-foreground grid place-items-center h-screen w-screen bg-black;
+    @apply text-foreground h-screen w-screen bg-black;
   }
 }
 
@@ -77,5 +77,9 @@
 
   .input {
     @apply p-2 rounded-lg bg-[#1a1a1a] outline-none text-white border border-solid border-transparent focus:border-blue-600 transition-colors;
+  }
+
+  .invalid {
+    @apply focus:border-red-500
   }
 }
