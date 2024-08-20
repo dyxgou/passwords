@@ -85,6 +85,12 @@ func CreatePassword(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	err = utils.UpdatePasswordsAmount(db, p.UserId)
+	if err != nil {
+		utils.RespondWithErr(w, 500, "Couldn't increment passwords amount")
+		return
+	}
+
 	type createPasswordRes struct {
 		CreatedPassword bool `json:"created_password"`
 	}
