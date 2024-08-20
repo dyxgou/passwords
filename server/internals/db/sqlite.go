@@ -25,7 +25,7 @@ func InitDB() *sql.DB {
     content TEXT NOT NULL,
     rot TEXT NOT NULL,
     sha TEXT NOT NULL,
-    security_level TEXT CHECK( security_level IN ("horrible", "bad", "mid", "good", "excellent") ),
+    security_level TEXT DEFAULT "pending" CHECK( security_level IN ("horrible", "bad", "mid", "good", "excellent", "pending") ),
     user_id INTEGER,
     FOREIGN KEY(user_id) REFERENCES users(id)
   );`
