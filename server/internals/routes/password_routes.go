@@ -10,6 +10,7 @@ func PasswordRoutes() chi.Router {
 
 	r.Post("/create", handlers.CreatePassword)
 	r.Get("/all", handlers.GetAllPasswords)
+	r.Get("/all/{id}", handlers.GetUserPasswords)
 
 	return r
 }
